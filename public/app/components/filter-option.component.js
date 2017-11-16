@@ -2,9 +2,9 @@ angular.
 module('app').
 component('filterOption', {
   template:
-    '<ul class="nav nav-tabs navbar-right">'+
+    '<ul class="nav nav-tabs navbar-right" style="margin-right:0px;">'+
       '<li ng-class="{active:  $ctrl.filter == filter.filter}" ng-repeat="filter in $ctrl.filters">' +
-          '<a ng-click="$ctrl.setFilter(filter.filter)">{{filter.name}}</a>' +         
+          '<a class="text-muted" ng-click="$ctrl.setFilter(filter.filter)"><strong>{{filter.name}}</strong></a>' +         
       '</li>' + 
     '</ul>',
     
