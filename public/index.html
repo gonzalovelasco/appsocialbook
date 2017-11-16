@@ -1,5 +1,5 @@
-<!doctype html>  
-<html lang="en" ng-app="app">  
+<!doctype html>
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>App</title>
@@ -7,62 +7,36 @@
     <meta name="description" content="app">
     <base href="/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-    <script src="ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>    
+    <script src="ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>
+    <script src="angular-resource/angular-resource.min.js"></script>
+
+
     <script src="app/app.js"></script>
     <script src="app/components/components.filter-option.js"></script>
     <script src="app/components/components.filter-button.js"></script>
-    
+    <script src="app/components/book-list.module.js"></script>
+    <script src="app/components/component.book-list.js"></script>
+    <script src="app/core/book.module.js"></script>
+    <script src="app/core/book.service.js"></script>
+
+
   </head>
   <body ng-controller="indexCtrl as app">
       <div class="container">
         <filter-option></filter-option>
       </div>
-      
+
+      <book-list></book-list>
+
     <!-- Our app entry point, everything will be generated here-->
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-4">13 Libros</div>        
-      <div class="col-sm-2">Mi calificacion</div>
-      <div class="col-sm-2">Calificacion general</div>
-      <div class="col-sm-2">Genero</div>
-      <div class="col-sm-2">Estado</div>        
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="col-sm-6">                            
-                          <img src="http://via.placeholder.com/150x200" class="img-responsive" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                          <h2>El principito</h2>
-                          <h5>de el autor</h5>
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-2">
-                    <h2 class="glyphicon glyphicon-star" aria-hidden="true"></h2>          
-                </div>
-                <div class="col-sm-2">
-                    <h2>9,6</h2>                    
-                </div>
-                <div class="col-sm-2">Genero</div>
-                <div class="col-sm-2">
-                    <filter-button></filter-button>                    
-                  </div>        
-              </div>
-        </div>
-      </div>
-    </div>
     <!--  https://github.com/akempes/angular-rateit -->
-    
+
   </body>
   <style type="text/css">
     body { background: #CCCACA !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
@@ -72,5 +46,4 @@
 }
 
   </style>
-</html>  
-
+</html>

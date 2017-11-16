@@ -1,4 +1,4 @@
-angular.module('app', [/*'ngResource'*/'infinite-scroll'])
+angular.module('app', [/*'ngResource'*/'infinite-scroll','bookList'])
 .controller('indexCtrl', function($scope) {
   })/*.
   factory('Book', ['$resource',

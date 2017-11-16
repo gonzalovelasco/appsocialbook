@@ -1,0 +1,12 @@
+{
+  "app": {
+    "port": 8080
+  },
+  "dbConfig": {
+    "host": "ds259305.mlab.com",
+    "port": 59305,
+    "name": "heroku_m05563wv",
+    "user": "usersocialapp",
+    "pass": "12345678"
+  }
+}
