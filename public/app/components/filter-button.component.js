@@ -16,7 +16,7 @@ component('filterButton', {
           {
             name: 'Leyendo',
           }, {
-            name: 'Quiero leer',
+            name: 'Quiero Leer',
           }, {
             name: 'Leido',
           }, {

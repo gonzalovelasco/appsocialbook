@@ -1,11 +1,19 @@
 <div class="container">
+        <filter-option filter="$ctrl.status" on-view-change="$ctrl.filter($event.filter)"></filter-option>
+</div>
+<div class="container">
+    </div>
+    
+<div class="container" infinite-scroll='$ctrl.nextPage()' infinite-scroll-disabled='$ctrl.busy'  infinite-scroll-distance='1'>
 <div class="row">
-  <div class="col-sm-4">13 Libros</div>
+  <div class="col-sm-4">{{$ctrl.count}} Libros</div>
   <div class="col-sm-2">Mi calificacion</div>
   <div class="col-sm-2">Calificacion general</div>
   <div class="col-sm-2">Genero</div>
   <div class="col-sm-2">Estado</div>
 </div>
+<div ng-show="!$ctrl.books.length"><h2>No hay libros</h2></div>    
+
 <div class="panel panel-default" ng-repeat="book in $ctrl.books">
     <div class="panel-body">
         <div class="row">
@@ -21,14 +29,15 @@
                 </div>
             </div>
             <div class="col-sm-2">
-                <h2 class="glyphicon glyphicon-star" aria-hidden="true"></h2>
+                <h2><ng-rate-it  max="5" step="0.5" rated="$ctrl.rate(rating,book)" resetable='false' star-width="16"  star-height="16" ng-model="book.score"></ng-rate-it></h2>
             </div>
             <div class="col-sm-2">
-                <h2>9,6</h2>
+                <h2>{{book.score*2}}</h2>
             </div>
-            <div class="col-sm-2">{{book.book.genre}}</div>
+            <div class="col-sm-2"><h2></h2>{{book.book.genre}}</div>
             <div class="col-sm-2">
-                <filter-button view="book.status" on-view-change="book.status = $event.view && $ctrl.setStatus(book,$event.view)" ></filter-button>
+                    <h2></h2>
+                <filter-button view="book.status" on-view-change="$ctrl.setStatus(book,$event.view)" ></filter-button>
               </div>
           </div>
     </div>

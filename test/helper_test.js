@@ -353,8 +353,8 @@ class Data {
       }
 
       Book.find({}).then((books) =>{
-        books.forEach(function(book) {
-          let bookuser = new BookUser({user: user, book: book});
+        books.forEach(function(book,index) {
+          let bookuser = new BookUser({user: user, book: book, seq: index});
           bookuser.save((err) => {
             if(err){
               console.log(err);

@@ -6,6 +6,6 @@ const connectionString = `mongodb://${dbConfig.user}:${dbConfig.pass}@${dbConfig
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(connectionString,{ useMongoClient: true })
+mongoose.connect('mongodb://localhost:27017/mongo',{ useMongoClient: true })
 .then(() =>  console.log('connection succesful'))
 .catch((err) => console.error(err));

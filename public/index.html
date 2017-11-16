@@ -6,31 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="app">
     <base href="/">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="angular-rateit/dist/ng-rateit.css" />
+    
+    <script src="jquery/dist/jquery.slim.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js" ></script>
+    <script src="angular/angular.min.js"></script>
+    <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>
     <script src="angular-resource/angular-resource.min.js"></script>
-
-
+    <script src="angular-rateit/dist/ng-rateit.min.js"></script>
+  
     <script src="app/app.js"></script>
-    <script src="app/components/components.filter-option.js"></script>
-    <script src="app/components/components.filter-button.js"></script>
+    <script src="app/components/filter-option.component.js"></script>
+    <script src="app/components/filter-button.component.js"></script>
     <script src="app/components/book-list.module.js"></script>
-    <script src="app/components/component.book-list.js"></script>
+    <script src="app/components/book-list.component.js"></script>
     <script src="app/core/book.module.js"></script>
     <script src="app/core/book.service.js"></script>
 
 
   </head>
   <body ng-controller="indexCtrl as app">
-      <div class="container">
-        <filter-option></filter-option>
-      </div>
 
       <book-list></book-list>
 
@@ -41,9 +39,10 @@
   <style type="text/css">
     body { background: #CCCACA !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 
-    .panel-default {
-     background-color: white !important;
-}
+    .container {
+      margin-bottom: 20px;
+    }
+
 
   </style>
 </html>

@@ -2,18 +2,35 @@ let BookUser = require('../model/bookuser');
 let Book = require('../model/book');
 
 
+
+exports.book_list_count = (req, res) => {
+
+    BookUser.count({}, ( err, count) =>{
+      res.status(200).json({count: count});      
+    })
+
+};
+
 exports.book_list = (req, res) => {
 
-  let afterDate = req.query.afterDate;
-
-  if (!afterDate){
-    afterDate = new Date();
+  let seq = req.query.seq;
+  let query = {};
+  
+  if(req.query.status && req.query.status !== 'Todos'){
+    query.status = req.query.status;
   }
-  let date = {$lt: afterDate };
+
 
   let limit = 8;
 
-  BookUser.find({/*create_at: date*/}).limit(limit).sort({create_at: -1}).populate({path:'book'}).exec((err, books) => {
+  if(seq)
+  {
+    let q = {$lt: seq };    
+    query.seq = q;
+
+  }
+
+  BookUser.find(query).limit(limit).sort({seq: -1}).populate({path:'book'}).exec((err, books) => {
     if (err) throw err;
     res.status(200).json(books);
   });
@@ -21,12 +38,22 @@ exports.book_list = (req, res) => {
 
 
 exports.book_update = (req, res) => {
-  let id = req.query.id;
+  let id = req.params.id;
   let status = req.body.status;
-
-  BookUser.update({'_id':id }, {$set:{status:status}},(err, book) => {
-    if (err) throw err;
-    res.status(200).json({});
+  let score = req.body.score;  
+  BookUser.findOne({'_id':id }).then((book) => {
+    if(status){
+      book.status = status;      
+    }
+    if(score){
+      book.score = score;      
+    }
+    book
+      .save()
+      .then(() => {
+        res.status(200).json(book);        
+      });
+      
   });
 
 };
